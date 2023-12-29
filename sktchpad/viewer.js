@@ -1,4 +1,5 @@
 //https://www.gstatic.com/charts/loader.js
+
 import { createRow } from "./js/display.js";
 import { utils } from "../common/utils.js";
 import { features } from "../common/js_objects/features.js";
@@ -18,3 +19,14 @@ const options = {
     vAxis:{title:featureNames[1]},
     legend:{position:'none'}
 }
+const chartContainer = document.getElementById('chartContainer')
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(()=>{
+    const data = new google.visualization.DataTable();
+    data.addColumn('number', featureNames[0]);
+    data.addColumn('number', featureNames[1]);
+    data.addRows(samples.map(s=>s.point));
+    samples.map(s=> console.log(s.point));
+    const chart = new google.visualization.ScatterChart(chartContainer);
+    chart.draw(data, options);
+})

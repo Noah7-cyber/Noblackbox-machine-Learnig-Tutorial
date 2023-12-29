@@ -49,9 +49,7 @@ function save(){
         const element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain; charset = utf-8'+encodeURIComponent(JSON.stringify(data)));
         const fileName = data.session +".json";
-        element.setAttribute('download', fileName);
-
-       
+        element.setAttribute('download', fileName);    
         document.body.append(element);
         element.style.display = "none";
         element.click();

@@ -1,4 +1,4 @@
-import {existsSync, writeFileSync} from "fs";
+// import {existsSync, writeFileSync} from "fs";
 export const utils = {};
 utils.formatPercent =(n)=>{
     return (n*100).toFixed(2) + "%";
@@ -22,10 +22,10 @@ utils.groupBy = (objArray, key)=>{
     return groups;
 }
 utils.flaggedUsers =[163882102141, 1663900040545, 1664485938220];
-utils.checkNonExistence=(path, writtenFile)=>{
-    if(existsSync(path)){
+// checkNonExistence=(path, writtenFile)=>{
+//     if(existsSync(path)){
 
-    }else{
-        writeFileSync(path, writtenFile);
-    }
-}
+//     }else{
+//         writeFileSync(path, writtenFile);
+//     }
+// }
